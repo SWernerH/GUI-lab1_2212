@@ -1,0 +1,28 @@
+const person = {
+    species : 'Human',
+    breath () {
+        console.log('Inhale... Exhale...');
+    }
+};
+
+const employee = Object.create(person);
+    employee.company = 'Tech Corp';
+    employee.position = 'Developer';
+
+const manager = Object.create(employee);
+    manager.department = 'Engineering';
+    manager.team = [];
+
+manager.addTeamMember = function(member) {
+    this.team.push(member);
+};
+
+console.log(manager.species);
+console.log(manager.company);
+console.log(manager.department);
+console.log(manager.breath());
+
+manager.addTeamMember('Alice');
+manager.addTeamMember('Bob');
+
+console.log(manager.team);
