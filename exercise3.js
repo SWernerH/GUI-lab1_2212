@@ -1,26 +1,23 @@
 const student = {
+  firstName: 'John',
+  lastName: 'Doe',
+  studentId: '12345',
+  courses: [],
 
-    firstname: "John",
-    lastname: "Doe",
-    age: 20,
-    studentId: "S12345",
-    courses: [],
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
 
-    getFullName: function() {
-        return this.firstname + " " + this.lastname;
-    },
+  enrollCourse(courseName) {
+    this.courses.push(courseName);
+  },
 
-    enrollCourse(courseName) {
-        this.courses.push(courseName);
-    },
+  getCourseCount() {
+    return this.courses.length;
+  }
+};
 
-    courseCount() {
-        return this.courses.length;
-    }
-}
-
-console.log(student.getFullName()); // Output: John Doe
-student.enrollCourse("CMPS2212");
-student.enrollCourse("MATH2210");
-console.log(student.courseCount()); // Output: 2
-
+console.log(student.getFullName());
+student.enrollCourse('CMPS2212');
+student.enrollCourse('MATH2210');
+console.log(student.getCourseCount());
