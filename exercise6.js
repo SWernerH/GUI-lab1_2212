@@ -13,8 +13,8 @@ const manager = Object.create(employee);
     manager.department = 'Engineering';
     manager.team = [];
 
-manager.addTeamMember = function(member) {
-    this.team.push(member);
+manager.addTeamMember = function(name) {
+    this.team.push(name);
 };
 
 console.log(manager.species);
